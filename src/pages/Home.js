@@ -6,7 +6,6 @@ const Home = () => {
     const cards = new Array(20)
         .fill('')
         .map((item, i) => i)
-    console.log(cards)
     return (
         <Fragment>
             <Search/>
