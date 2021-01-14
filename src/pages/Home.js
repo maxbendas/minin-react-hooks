@@ -1,10 +1,26 @@
-import React from 'react';
+import React, {Fragment} from 'react';
+import Search from "../components/Search";
+import Card from "../components/Card";
 
 const Home = () => {
+    const cards = new Array(20)
+        .fill('')
+        .map((item, i) => i)
+    console.log(cards)
     return (
-        <div>
-            Home page
-        </div>
+        <Fragment>
+            <Search/>
+            <div className="row">
+                {cards.map(card => {
+                        return (
+                            <div className="col-sm-4 mb-4" key={card}>
+                                <Card/>
+                            </div>
+                        )
+                    }
+                )}
+            </div>
+        </Fragment>
     );
 };
 
