@@ -1,9 +1,11 @@
 import React, {useContext, useState} from 'react';
 import {AlertContext} from "../context/alert/alertContext";
+import {GithubContext} from "../context/github/githubContext";
 
 const Search = () => {
     const [value, setValue] = useState('')
     const {show} = useContext(AlertContext)
+    const github = useContext(GithubContext)
 
     console.log(value)
     const onSubmit = (event) => {
@@ -11,7 +13,7 @@ const Search = () => {
             return
         }
         if (value.trim()){
-            console.log(value)
+            github.searchUsers(value.trim())
         }else{
             show('Enter your name!')
         }
