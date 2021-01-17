@@ -7,7 +7,6 @@ const Search = () => {
     const alert = useContext(AlertContext)
     const github = useContext(GithubContext)
 
-    console.log(value)
     const onSubmit = (event) => {
         if (event.key !== 'Enter') {
             return
